@@ -7,3 +7,14 @@
     <p><%= place.description %></p><br>
   </div>
 <% end %>
+
+<div class="col-xs-10 col-xs-offset-1">
+<!-- or custom pagination -->
+<% if @places.previous_page %>
+  <%= link_to "< Previous", params.merge(page: @places.previous_page) %>
+<% end %>
+Page <%= @places.current_page %> of <%= @places.total_pages %>
+<% if @places.next_page %>
+  <%= link_to "Next >", params.merge(page: @places.next_page) %>
+<% end %>
+</div>
